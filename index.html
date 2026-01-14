@@ -169,10 +169,114 @@
     footer a:hover {
       text-decoration: underline;
     }
-  </style>
+  
+
+    /* ================= NAVIGATION BAR ================= */
+    .navbar {
+      background-color: var(--bg);
+      border-bottom: 1px solid #262b36;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .nav-menu a:hover {
+      color: var(--accent);
+    }
+
+    /* ================= DROPDOWN MENU ================= */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: var(--panel);
+      border: 1px solid #262b36;
+      border-radius: 8px;
+      list-style: none;
+      padding: 0.5rem 0;
+      min-width: 230px;
+    }
+
+    .dropdown-menu li {
+      padding: 0.5rem 1rem;
+    }
+
+    .dropdown-menu li a {
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+</style>
 </head>
 
 <body>
+
+<!-- ================= NAVIGATION BAR ================= -->
+<!-- Top-level site navigation with Projects dropdown -->
+<nav class="navbar">
+  <div class="nav-container">
+    <!-- Site / name branding -->
+    <div class="nav-logo">Breauna DeLon</div>
+
+    <!-- Primary navigation links -->
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+
+      <!-- Projects dropdown -->
+      <li class="dropdown">
+        <a href="#">Projects ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#pill-sorter">AI Pill Sorting System</a></li>
+          <li><a href="#fsae">Formula SAE Suspension</a></li>
+          <li><a href="#motor-mount">Motor Mount Bracket</a></li>
+          <li><a href="#prosthetic">Prosthetic Foot</a></li>
+          <li><a href="#cfd">T-Junction CFD</a></li>
+          <li><a href="#reverse">Reverse Engineering</a></li>
+          <li><a href="#plow">Ox-Drawn Plow</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="mailto:breaunad12@gmail.com">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
 
 <!-- ================= HEADER ================= -->
 <header>
@@ -185,7 +289,7 @@
 
 <!-- ================= PROJECTS ================= -->
 <section>
-  <h3>Projects</h3>
+  <h3 id="projects">Projects</h3>
 
   <!--
     Each .project block is independent.
@@ -193,7 +297,7 @@
   -->
   <div class="projects">
 
-    <div class="project">
+    <div class="project" id="pill-sorter">
       <h4>AI-Powered Pill Sorting System</h4>
       <span>Capstone-Style Project</span>
       <p>
@@ -201,7 +305,7 @@
       </p>
     </div>
 
-    <div class="project">
+    <div class="project" id="fsae">
       <h4>Formula SAE Front and Rear Suspension Design</h4>
       <span>Team Lead | Aug 2025 – Present</span>
       <p>
@@ -209,7 +313,7 @@
       </p>
     </div>
 
-    <div class="project">
+    <div class="project" id="motor-mount">
       <h4>Motor Mounting Bracket – CAD & FEA</h4>
       <span>May 2025</span>
       <p>
@@ -217,7 +321,7 @@
       </p>
     </div>
 
-    <div class="project">
+    <div class="project" id="prosthetic">
       <h4>Prosthetic Foot Design – FEA Study</h4>
       <span>May 2025</span>
       <p>
@@ -225,7 +329,7 @@
       </p>
     </div>
 
-    <div class="project">
+    <div class="project" id="cfd">
       <h4>T-Junction Pipe CFD Simulation</h4>
       <span>May 2025</span>
       <p>
@@ -233,7 +337,7 @@
       </p>
     </div>
 
-    <div class="project">
+    <div class="project" id="reverse">
       <h4>Reverse Engineered Walking Dog Toy</h4>
       <span>Team Lead | Dec 2024</span>
       <p>
@@ -241,7 +345,7 @@
       </p>
     </div>
 
-    <div class="project">
+    <div class="project" id="plow">
       <h4>Ox-Drawn Plow Mechanism</h4>
       <span>Dec 2024</span>
       <p>
@@ -254,7 +358,7 @@
 
 <!-- ================= SKILLS ================= -->
 <section>
-  <h3>Skills</h3>
+  <h3 id="skills">Skills</h3>
 
   <!-- Skill pills are purely visual and easy to reorder -->
   <div class="skills">
