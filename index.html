@@ -1,181 +1,73 @@
 <!DOCTYPE html>
 <!--
-  Engineering Portfolio – Single Page HTML
-  Author: Breauna DeLon
+=====================================================
+ENGINEERING PORTFOLIO – MAIN LANDING PAGE
+Author: Breauna DeLon
 
-  PURPOSE
-  - Static, recruiter-friendly portfolio
-  - No frameworks, no build tools, no JavaScript required
-  - Designed for GitHub Pages hosting
+PURPOSE
+- Single-page professional engineering portfolio
+- Hosted on GitHub Pages
+- Clean HTML + CSS (no frameworks, no JS)
 
-  HOW TO USE
-  - Edit text inside <h*> and <p> tags to update content
-  - Duplicate a .project div to add a new project
-  - Images can be added later inside each .project card
+HOW TO USE
+- Edit text inside <h*> and <p> tags
+- Images are stored in /images
+- Projects can link to separate pages later
+=====================================================
 -->
 
 <html lang="en">
 <head>
-  <!-- Character encoding -->
-  <meta charset="UTF-8" />
 
-  <!-- Responsive scaling on mobile and desktop -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Browser tab title -->
+  <!-- ========== META SETTINGS ========== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Breauna DeLon | Engineering Portfolio</title>
 
-  <!-- ================= CSS STYLES ================= -->
-  <!--
-    All CSS is embedded for simplicity.
-    This can later be split into a separate style.css file
-    without changing any HTML structure.
-  -->
+  <!-- ========== EMBEDDED CSS ========== -->
   <style>
-    /* ---------------- COLOR SYSTEM ----------------
-       CSS variables allow global theme control
-       Change values here to restyle the entire site
-    */
+
+    /* =====================================================
+       COLOR SYSTEM (Earth tones + light backgrounds)
+       Edit these to restyle the entire site
+    ===================================================== */
     :root {
-      /* Earth-tone color system */
-      --bg: #1b1a17;        /* deep warm charcoal-brown background */
-      --panel: #24231f;     /* card background, slightly lighter */
-      --text: #f0ede6;      /* warm off-white text */
-      --muted: #b8b2a7;     /* muted beige for secondary text */
-      --accent: #6f8f72;    /* sage green accent */
+      --bg-dark: #1f1f1b;        /* header + nav background */
+      --bg-light: #f6f4ee;      /* section background */
+      --panel: #ffffff;         /* cards */
+      --text-dark: #2a2a2a;
+      --text-light: #f4f2ec;
+      --accent: #6f8f72;        /* sage green */
+      --muted: #7a7a72;
+      --border: #d9d6cf;
     }
 
-    /* ---------------- RESET ----------------
-       Normalizes browser defaults
-    */
+    /* =====================================================
+       RESET / BASE STYLES
+    ===================================================== */
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
-    /* ---------------- BASE PAGE ---------------- */
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
+      background-color: var(--bg-light);
+      color: var(--text-dark);
       line-height: 1.6;
     }
 
-    /* ---------------- HEADER ----------------
-       First section recruiters see
-    */
-    header {
-      max-width: 1100px;
-      margin: auto;
-      padding: 4rem 2rem 3rem;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header h2 {
-      font-size: 1.3rem;
-      font-weight: 400;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-    }
-
-    header p {
-      max-width: 720px;
-      color: var(--muted);
-    }
-
-    /* ---------------- SECTIONS ----------------
-       Shared layout for Projects and Skills
-    */
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 3rem 2rem;
-    }
-
-    section h3 {
-      font-size: 1.8rem;
-      margin-bottom: 2rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid #262b36;
-    }
-
-    /* ---------------- PROJECT GRID ----------------
-       Auto-resizes based on screen width
-    */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    /* ---------------- PROJECT CARD ---------------- */
-    .project {
-      background-color: var(--panel);
-      border: 1px solid #262b36;
-      border-radius: 12px;
-      padding: 1.5rem;
-    }
-
-    .project h4 {
-      font-size: 1.2rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .project span {
+    img {
+      max-width: 100%;
       display: block;
-      font-size: 0.9rem;
-      color: var(--accent);
-      margin-bottom: 0.8rem;
     }
 
-    .project p {
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    /* ---------------- SKILLS ---------------- */
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-
-    .skill {
-      background-color: var(--panel);
-      border: 1px solid #262b36;
-      border-radius: 20px;
-      padding: 0.5rem 0.9rem;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    /* ---------------- FOOTER ---------------- */
-    footer {
-      text-align: center;
-      padding: 3rem 2rem 4rem;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-  
-
-    /* ================= NAVIGATION BAR ================= */
+    /* =====================================================
+       NAVIGATION BAR
+    ===================================================== */
     .navbar {
-      background-color: var(--bg);
-      border-bottom: 1px solid #262b36;
+      background-color: var(--bg-dark);
       position: sticky;
       top: 0;
       z-index: 100;
@@ -191,6 +83,7 @@
     }
 
     .nav-logo {
+      color: var(--text-light);
       font-weight: 600;
       font-size: 1rem;
     }
@@ -202,8 +95,8 @@
     }
 
     .nav-menu a {
+      color: var(--text-light);
       text-decoration: none;
-      color: var(--text);
       font-size: 0.95rem;
     }
 
@@ -211,226 +104,239 @@
       color: var(--accent);
     }
 
-    /* ================= DROPDOWN MENU ================= */
-    .dropdown {
-      position: relative;
+    /* =====================================================
+       HEADER / HERO SECTION
+    ===================================================== */
+    header {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      padding: 4rem 2rem;
     }
 
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
+    .header-content {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header h2 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #d2cfbf;
+      margin-bottom: 1.5rem;
+    }
+
+    header p {
+      max-width: 720px;
+      color: #d6d3c8;
+    }
+
+    /* =====================================================
+       SHARED SECTION STYLING
+    ===================================================== */
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 4rem 2rem;
+    }
+
+    section h3 {
+      font-size: 1.9rem;
+      margin-bottom: 2rem;
+      color: #3b5f46;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+
+    /* =====================================================
+       ABOUT ME SECTION
+    ===================================================== */
+    .about-container {
+      display: flex;
+      align-items: flex-start; /* 🔑 THIS FIXES IMAGE ALIGNMENT */
+      gap: 2.5rem;
       background-color: var(--panel);
-      border: 1px solid #262b36;
-      border-radius: 8px;
-      list-style: none;
-      padding: 0.5rem 0;
-      min-width: 230px;
+      padding: 2.5rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
     }
 
-    .dropdown-menu li {
+    .about-image img {
+      width: 260px;
+      border-radius: 14px;
+    }
+
+    .about-text p {
+      margin-bottom: 1rem;
+      color: var(--muted);
+    }
+
+    /* =====================================================
+       PROJECT GRID
+    ===================================================== */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project {
+      background-color: var(--panel);
+      border-radius: 14px;
+      padding: 1.6rem;
+      border: 1px solid var(--border);
+    }
+
+    .project h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .project span {
+      font-size: 0.9rem;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    .project p {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    /* =====================================================
+       SKILLS SECTION
+    ===================================================== */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .skill {
+      background-color: var(--panel);
+      border: 1px solid var(--border);
       padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: var(--muted);
     }
 
-    .dropdown-menu li a {
-      color: var(--text);
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+    footer {
+      text-align: center;
+      padding: 3rem 2rem 4rem;
+      color: var(--muted);
       font-size: 0.9rem;
     }
 
-    .dropdown:hover .dropdown-menu {
-      display: block;
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
     }
 
-</style>
+  </style>
 </head>
 
 <body>
 
-<!-- ================= NAVIGATION BAR ================= -->
-<!-- Top-level site navigation with Projects dropdown -->
+<!-- ========== NAV BAR ========== -->
 <nav class="navbar">
   <div class="nav-container">
-    <!-- Site / name branding -->
     <div class="nav-logo">Breauna DeLon</div>
-
-    <!-- Primary navigation links -->
     <ul class="nav-menu">
       <li><a href="#about">About</a></li>
-      <li><a href="index.html">Home</a></li>
-
-
-      <!-- Projects dropdown -->
-      <li class="dropdown">
-        <a href="#">Projects ▾</a>
-        <ul class="dropdown-menu">
-          <li><a href="#pill-sorter">AI Pill Sorting System</a></li>
-          <li><a href="#fsae">Formula SAE Suspension</a></li>
-          <li><a href="#motor-mount">Motor Mount Bracket</a></li>
-          <li><a href="#prosthetic">Prosthetic Foot</a></li>
-          <li><a href="#cfd">T-Junction CFD</a></li>
-          <li><a href="#reverse">Reverse Engineering</a></li>
-          <li><a href="#plow">Ox-Drawn Plow</a></li>
-        </ul>
-      </li>
-
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="mailto:breaunad12@gmail.com">Contact</a></li>
     </ul>
   </div>
 </nav>
 
-
-<!-- ================= HEADER ================= -->
+<!-- ========== HEADER ========== -->
 <header>
-  <h1>Breauna DeLon</h1>
-  <h2>Mechanical Engineering Technology Student</h2>
-  <p>
-    Senior Mechanical Engineering Technology student with experience in CAD, FEA, CFD, and mechanical system design. Focused on applying structured engineering analysis to practical, manufacturable solutions.
-  </p>
+  <div class="header-content">
+    <h1>Breauna DeLon</h1>
+    <h2>Mechanical Engineering Technology Student</h2>
+    <p>
+      Senior Mechanical Engineering Technology student with experience in CAD, FEA, CFD,
+      and mechanical system design. Focused on applying structured engineering analysis
+      to practical, manufacturable solutions.
+    </p>
+  </div>
 </header>
-<!-- ================= ABOUT ================= -->
-<section id="about" style="background-color:#f7f5f0; color:#2e2e2e;">
-  <div style="max-width:1100px; margin:auto; padding:4rem 2rem;">
 
-    <div style="display:flex; gap:50px; align-items:center; flex-wrap:wrap;">
+<!-- ========== ABOUT ME ========== -->
+<section id="about">
+  <h3>About Me</h3>
 
-      <div>
-        <img src="images/headshot.jpg"
-             alt="Breauna DeLon headshot"
-             style="width:260px; border-radius:14px;">
-      </div>
-
-      <div style="max-width:600px;">
-        <h3 style="color:#3b5f41;">About Me</h3>
-
-        <p>
-          I am a senior Mechanical Engineering Technology student with hands-on
-          experience in CAD, FEA, CFD, and mechanical system design.
-        </p>
-
-        <p>
-          My work focuses on translating structured engineering analysis into
-          manufacturable, real-world solutions through both individual and
-          team-based projects.
-        </p>
-
-        <p>
-          In addition to engineering, I bring leadership, discipline, and teamwork
-          developed through Division I and II collegiate athletics.
-        </p>
-      </div>
-
+  <div class="about-container">
+    <div class="about-image">
+      <img src="images/headshot.JPG" alt="Breauna DeLon headshot">
     </div>
 
-    <div style="text-align:center; margin-top:50px;">
-      <img src="images/Basketball_Image.jpg"
-           alt="Collegiate basketball experience"
-           style="max-width:320px; border-radius:12px;">
-      <p style="font-size:0.9rem; color:#555; margin-top:10px;">
-        Former Division I & II collegiate basketball player
+    <div class="about-text">
+      <p>
+        I am a senior Mechanical Engineering Technology student with hands-on experience
+        in CAD, FEA, CFD, and mechanical system design.
+      </p>
+      <p>
+        My work focuses on translating structured engineering analysis into manufacturable,
+        real-world solutions through both individual and team-based projects.
+      </p>
+      <p>
+        In addition to engineering, I bring leadership, discipline, and teamwork developed
+        through Division I and II collegiate athletics.
       </p>
     </div>
-
   </div>
 </section>
-<!-- ================= END ABOUT ================= -->
 
-<!-- ================= PROJECTS ================= -->
-<section>
-  <h3 id="projects">Projects</h3>
+<!-- ========== PROJECTS ========== -->
+<section id="projects">
+  <h3>Projects</h3>
 
-  <!--
-    Each .project block is independent.
-    To add a project, copy one block and paste it below.
-  -->
   <div class="projects">
-
-    <div class="project" id="pill-sorter">
+    <div class="project">
       <h4>AI-Powered Pill Sorting System</h4>
       <span>Capstone-Style Project</span>
-      <p>
-        Designed and built a mechanical and software-integrated pill sorting prototype using CAD-designed trays, servo-driven mechanisms, and Python-based computer vision for automated pill identification and sorting.
-      </p>
-
-      <!-- NEW LINK -->
-      <p>
-        <a href="projects/pill-sorter.html">View Project →</a>
-     </p>
+      <p>Mechanical design, servo actuation, and Python-based computer vision.</p>
     </div>
 
-    <div class="project" id="fsae">
-      <h4>Formula SAE Front and Rear Suspension Design</h4>
-      <span>Team Lead | Aug 2025 – Present</span>
-      <p>
-        Redesigned front and rear suspension systems for a Formula SAE vehicle, transitioning from push-rod and rocker-arm layouts to direct-acting coilover configurations while maintaining rule compliance and improving packaging and manufacturability.
-      </p>
+    <div class="project">
+      <h4>Formula SAE Suspension Design</h4>
+      <span>Team Lead</span>
+      <p>Front and rear suspension redesign with packaging and manufacturability focus.</p>
     </div>
-
-    <div class="project" id="motor-mount">
-      <h4>Motor Mounting Bracket – CAD & FEA</h4>
-      <span>May 2025</span>
-      <p>
-        Designed a motor mounting bracket in SolidWorks and performed static stress, thermal, and fatigue simulations to verify infinite fatigue life and safe operation at elevated temperatures.
-      </p>
-    </div>
-
-    <div class="project" id="prosthetic">
-      <h4>Prosthetic Foot Design – FEA Study</h4>
-      <span>May 2025</span>
-      <p>
-        Designed a low-cost prosthetic foot assembly and evaluated structural performance using SolidWorks FEA, comparing aluminum, stainless steel, and CFRP materials under walking load cases.
-      </p>
-    </div>
-
-    <div class="project" id="cfd">
-      <h4>T-Junction Pipe CFD Simulation</h4>
-      <span>May 2025</span>
-      <p>
-        Simulated internal fluid flow through a T-junction pipe using ANSYS Fluent to analyze velocity profiles, vortex formation, and pressure drop with mesh refinement.
-      </p>
-    </div>
-
-    <div class="project" id="reverse">
-      <h4>Reverse Engineered Walking Dog Toy</h4>
-      <span>Team Lead | Dec 2024</span>
-      <p>
-        Led a reverse engineering project by modeling mechanical motion and gear trains in SolidWorks to replicate walking behavior while coordinating team tasks and timelines.
-      </p>
-    </div>
-
-    <div class="project" id="plow">
-      <h4>Ox-Drawn Plow Mechanism</h4>
-      <span>Dec 2024</span>
-      <p>
-        Created a four-bar linkage model in SolidWorks to study agricultural plow depth control, simulating applied forces and calculating angular displacement of the wheel and depth lever.
-      </p>
-    </div>
-
   </div>
 </section>
 
-<!-- ================= SKILLS ================= -->
-<section>
-  <h3 id="skills">Skills</h3>
+<!-- ========== SKILLS ========== -->
+<section id="skills">
+  <h3>Skills</h3>
 
-  <!-- Skill pills are purely visual and easy to reorder -->
   <div class="skills">
     <div class="skill">SolidWorks (CSWA)</div>
     <div class="skill">ANSYS Fluent</div>
-    <div class="skill">Finite Element Analysis</div>
-    <div class="skill">Computational Fluid Dynamics</div>
+    <div class="skill">FEA</div>
+    <div class="skill">CFD</div>
     <div class="skill">Python</div>
-    <div class="skill">AutoCAD</div>
     <div class="skill">GD&T</div>
-    <div class="skill">Lean Six Sigma (Yellow Belt)</div>
+    <div class="skill">Lean Six Sigma</div>
   </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- ========== FOOTER ========== -->
 <footer>
   <p>
-    Contact: <a href="mailto:breaunad12@gmail.com">breaunad12@gmail.com</a> |
+    Contact:
+    <a href="mailto:breaunad12@gmail.com">breaunad12@gmail.com</a> |
     <a href="https://www.linkedin.com/in/breauna-delon-650638256" target="_blank">LinkedIn</a>
   </p>
 </footer>
