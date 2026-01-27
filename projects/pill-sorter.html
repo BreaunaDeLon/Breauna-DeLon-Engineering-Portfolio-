@@ -1,1 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Character encoding -->
+  <meta charset="UTF-8">
 
+  <!-- Page title shown in browser tab -->
+  <title>AI Pill Sorting System | Breauna DeLon</title>
+
+  <!-- Makes layout scale correctly on phones and tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ================= PAGE STYLES ================= -->
+  <!--
+    Styles are embedded here for simplicity.
+    These styles control colors, spacing, fonts, and media layout.
+  -->
+  <style>
+    /* Base page styling */
+    body {
+      font-family: system-ui, sans-serif;
+      background-color: #f7f5f0;   /* light, warm background */
+      color: #2e2e2e;              /* dark readable text */
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Header and main sections share the same width and padding */
+    header, section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 3rem 2rem;
+    }
+
+    /* Main project title */
+    h1 {
+      color: #3b5f41;              /* earthy green accent */
+      margin-bottom: 1rem;
+    }
+
+    /* Images and videos scale responsively */
+    img, video {
+      max-width: 100%;
+      border-radius: 12px;
+      margin: 1.5rem 0;
+    }
+
+    /* Links */
+    a {
+      color: #3b5f41;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= PAGE HEADER ================= -->
+<header>
+  <!-- Back navigation to main portfolio page -->
+  <a href="../index.html">← Back to Portfolio</a>
+
+  <!-- Project title -->
+  <h1>AI-Powered Pill Sorting System</h1>
+
+  <!-- Short project summary -->
+  <p>
+    Capstone-style project integrating mechanical design, electronics,
+    and computer vision for automated pill identification and sorting.
+  </p>
+</header>
+
+<!-- ================= PROJECT CONTENT ================= -->
+<section>
+
+  <!-- Overview section -->
+  <h2>Project Overview</h2>
+  <p>
+    This project focused on designing a mechanical pill sorting system
+    capable of identifying and sorting pills using computer vision.
+    CAD-designed trays, servo-driven mechanisms, and Python-based
+    image processing were integrated into a functional prototype.
+  </p>
+
+  <!-- Example project image -->
+  <img src="../images/AI_Pill_Canister.jpg"
+       alt="Pill sorting canister CAD model">
+
+  <!-- Mechanical design explanation -->
+  <h2>Mechanical Design</h2>
+  <p>
+    The mechanical system was designed in SolidWorks with emphasis on
+    manufacturability, modularity, and repeatability. Servo-driven
+    actuators controlled pill gates and rotation mechanisms.
+  </p>
+
+  <img src="../images/AI_Pill_Rear_Profile.jpg"
+       alt="Rear view of pill sorter">
+
+  <!-- Video demonstration -->
+  <h2>System Demonstration</h2>
+
+  <!--
+    autoplay  = starts automatically
+    loop      = repeats continuously
+    muted     = required for autoplay in browsers
+    playsinline = prevents full-screen takeover on mobile
+  -->
+  <video autoplay loop muted playsinline>
+    <source src="../videos/pill_sorter_demo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Skills summary -->
+  <h2>Key Skills Demonstrated</h2>
+  <ul>
+    <li>Mechanical CAD design (SolidWorks)</li>
+    <li>Servo-driven mechanisms</li>
+    <li>Python and computer vision</li>
+    <li>System integration</li>
+  </ul>
+
+</section>
+
+</body>
+</html>
