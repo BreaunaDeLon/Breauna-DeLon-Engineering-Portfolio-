@@ -197,15 +197,16 @@ HOW TO USE
       color: var(--muted);
     }
     /* ================= ABOUT IMAGE ================= */
-  .about-image {
-  text-align: center;
+.about-image {
+  display: flex;
+  justify-content: center;
   margin: 3rem auto;
-  }
+}
 
-  .about-image img {
+.about-image img {
   width: 320px;
-  border-radius: 16px;
-  }
+  border-radius: 18px;
+}
 
 
     /* =====================================================
@@ -319,26 +320,26 @@ HOW TO USE
 <section id="about">
   <h3>About Me</h3>
 
-  <div class="about-image">
-  <img src="images/Basketball_Image.jpg" alt="Breauna DeLon playing basketball">
-</div>
+  <p>
+    I am a 24-year-old senior Mechanical Engineering Technology student with hands-on
+    experience in CAD, FEA, CFD, and mechanical system design.
+  </p>
 
-    <div class="about-text">
-      <p>
-        I am a senior Mechanical Engineering Technology student with hands-on experience
-        in CAD, FEA, CFD, and mechanical system design.
-      </p>
-      <p>
-        My work focuses on translating structured engineering analysis into manufacturable,
-        real-world solutions through both individual and team-based projects.
-      </p>
-      <p>
-        In addition to engineering, I bring leadership, discipline, and teamwork developed
-        through Division I and II collegiate athletics.
-      </p>
-    </div>
-  </div>
+  <p>
+    I am a former Division I and Division II women’s basketball player, where I developed
+    leadership, discipline, and teamwork skills that strongly influence how I approach
+    engineering challenges and collaboration.
+  </p>
+
+  <p>
+    Outside of engineering, I enjoy reading, solving puzzles, gaming, coding,
+    and experimenting with 3D printing to bring ideas from concept to physical form.
+  </p>
 </section>
+
+<div class="about-image">
+  <img src="images/Basketball_Image.JPG" alt="Breauna DeLon playing basketball">
+</div>
 
 <!-- ========== PROJECTS ========== -->
 <section id="projects">
