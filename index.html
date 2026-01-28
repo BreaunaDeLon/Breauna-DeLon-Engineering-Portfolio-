@@ -134,6 +134,28 @@ HOW TO USE
       max-width: 720px;
       color: #d6d3c8;
     }
+    /* ================= HEADER LAYOUT ================= */
+
+    /* Flex container for text + headshot */
+    .header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    }
+
+/* Text column */
+.header-text {
+  flex: 1;
+}
+
+/* Headshot container */
+.header-headshot img {
+  width: 220px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
 
     /* =====================================================
        SHARED SECTION STYLING
@@ -174,6 +196,17 @@ HOW TO USE
       margin-bottom: 1rem;
       color: var(--muted);
     }
+    /* ================= ABOUT IMAGE ================= */
+  .about-image {
+  text-align: center;
+  margin: 3rem auto;
+  }
+
+  .about-image img {
+  width: 320px;
+  border-radius: 16px;
+  }
+
 
     /* =====================================================
        PROJECT GRID
@@ -261,14 +294,24 @@ HOW TO USE
 
 <!-- ========== HEADER ========== -->
 <header>
-  <div class="header-content">
-    <h1>Breauna DeLon</h1>
-    <h2>Mechanical Engineering Technology Student</h2>
-    <p>
-      Senior Mechanical Engineering Technology student with experience in CAD, FEA, CFD,
-      and mechanical system design. Focused on applying structured engineering analysis
-      to practical, manufacturable solutions.
-    </p>
+  <div class="header-content header-flex">
+
+    <!-- LEFT: Text -->
+    <div class="header-text">
+      <h1>Breauna DeLon</h1>
+      <h2>Mechanical Engineering Technology Student</h2>
+      <p>
+        Senior Mechanical Engineering Technology student with experience in CAD, FEA, CFD,
+        and mechanical system design. Focused on applying structured engineering analysis
+        to practical, manufacturable solutions.
+      </p>
+    </div>
+
+    <!-- RIGHT: Headshot -->
+    <div class="header-headshot">
+      <img src="images/headshot.jpg" alt="Breauna DeLon headshot">
+    </div>
+
   </div>
 </header>
 
@@ -276,10 +319,9 @@ HOW TO USE
 <section id="about">
   <h3>About Me</h3>
 
-  <div class="about-container">
-    <div class="about-image">
-      <img src="images/headshot.JPG" alt="Breauna DeLon headshot">
-    </div>
+  <div class="about-image">
+  <img src="images/Basketball_Image.JPG" alt="Breauna DeLon playing basketball">
+</div>
 
     <div class="about-text">
       <p>
