@@ -69,6 +69,102 @@
   </p>
 </section>
 
+  
+<!-- ================= Design and Methodology ================= -->
+<section>
+  <h2>Design and Methodology</h2>
+
+  <p>
+    This project focused on designing a low-cost, energy-storing prosthetic foot using
+    SolidWorks CAD and Finite Element Analysis (FEA). The goal was to balance durability,
+    flexibility, and affordability while maintaining safe performance under real-world
+    loading conditions.
+  </p>
+
+  <p>
+    A static force of 980 N was applied at the hinge location to represent body weight
+    transfer during standing and walking. Multiple load cases were evaluated to simulate
+    upward motion (toe-off), downward motion (heel strike), and static standing.
+  </p>
+</section>
+<!-- ================= Upward Walking Motion ================= -->
+  <section>
+  <h2>FEA Results – Upward Walking Motion</h2>
+
+  <p>
+    This simulation represents toe-off during walking, where the prosthetic foot flexes
+    upward under load. The results show controlled bending behavior with stress and strain
+    remaining within the elastic limits of the carbon fiber foot blade.
+  </p>
+
+  <figure>
+    <img src="../images/FEA_stress_foot.jpg" alt="Von Mises stress during upward walking">
+    <figcaption>Von Mises stress distribution during upward walking motion.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="../images/FEA_displacement_foot.jpg" alt="Displacement during upward walking">
+    <figcaption>Total displacement showing elastic flexure of the foot blade.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="../images/FEA_fos_foot.jpg" alt="Factor of safety during upward walking">
+    <figcaption>Factor of safety plot confirming safe operation under toe-off loading.</figcaption>
+  </figure>
+</section>
+
+<!-- ================= Downward Walking Motion ================= -->
+  <section>
+  <h2>FEA Results – Downward Walking Motion</h2>
+
+  <p>
+    This case simulates stepping downward, representing a worst-case bending scenario.
+    Higher stress and displacement values were observed, but all remained below material
+    failure limits, validating the structural integrity of the design.
+  </p>
+
+  <figure>
+    <img src="../images/FEA_stress_foot_down.jpg" alt="Von Mises stress during downward walking">
+    <figcaption>Stress concentration during downward walking motion.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="../images/FEA_displacement_foot_down.jpg" alt="Displacement during downward walking">
+    <figcaption>Increased displacement under downward loading conditions.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="../images/FEA_fos_foot_down.jpg" alt="Factor of safety during downward walking">
+    <figcaption>Factor of safety remaining well above failure thresholds.</figcaption>
+  </figure>
+</section>
+
+<!-- ================= Standing Load Case ================= -->
+<section>
+  <h2>FEA Results – Standing Load Case</h2>
+
+  <p>
+    The standing simulation represents static body weight applied to the prosthetic foot.
+    Minimal stress, strain, and displacement were observed, confirming that the design can
+    safely support everyday standing loads.
+  </p>
+
+  <figure>
+    <img src="../images/FEA_stress_foot_down_stand.jpg" alt="Stress during standing">
+    <figcaption>Very low stress levels under static standing load.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="../images/FEA_displacement_foot_stand.jpg" alt="Displacement during standing">
+    <figcaption>Negligible displacement observed during standing.</figcaption>
+  </figure>
+
+  <figure>
+    <img src="../images/FEA_fos_foot_down_stand.jpg" alt="Factor of safety during standing">
+    <figcaption>High factor of safety confirming structural stability.</figcaption>
+  </figure>
+</section>
+
 <!-- ================= KEY SKILLS DEMONSTRATED ================= -->
 <section>
   <h2>Key Skills Demonstrated</h2>
@@ -99,6 +195,12 @@
     <li>Technical documentation of assumptions and results</li>
     <li>Independent project execution and time management</li>
   </ul>
+
+  <p>
+    <a href="../files/CAD_LAB_Prosthetic.pdf" target="_blank">
+      View Full Technical Report (PDF)
+    </a>
+  </p>
 </section>
 
 <!-- ================= ENGINEERING ANALYSIS ================= -->
