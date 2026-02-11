@@ -8,6 +8,34 @@
 
   <!-- Inherit main site styling -->
   <link rel="stylesheet" href="../style.css">
+  /* ================= PROJECT IMAGE GALLERY ================= */
+
+.project-gallery {
+  max-width: 900px;
+  margin: 3rem auto;
+}
+
+.project-figure {
+  margin: 2.5rem auto;
+  text-align: center;
+}
+
+.project-figure img {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.project-figure figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #666;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 </head>
 
 <body>
@@ -54,6 +82,63 @@
     The internal mechanism was disassembled, measured, and reconstructed in CAD
     to model linkages, gear trains, and motion paths responsible for the toy’s walking behavior.
   </p>
+</section>
+  <!-- ================= PHYSICAL PROTOTYPE IMAGES ================= -->
+<section class="project-gallery">
+  <h3>Physical Toy and Gearbox</h3>
+
+  <figure class="project-figure">
+    <img src="../images/dog_toy_front_actual.jpg" alt="Front view of physical walking dog toy">
+    <figcaption>
+      Front view of the physical walking dog toy used as the basis for reverse
+      engineering and motion analysis.
+    </figcaption>
+  </figure>
+
+  <figure class="project-figure">
+    <img src="../images/dog_toy_side_actual.jpg" alt="Side view of physical walking dog toy">
+    <figcaption>
+      Side view of the physical toy showing leg geometry and walking posture
+      during motion.
+    </figcaption>
+  </figure>
+
+  <figure class="project-figure">
+    <img src="../images/gear_box_dog_toy.jpg" alt="Internal gearbox of dog toy">
+    <figcaption>
+      Internal gearbox extracted from the toy, analyzed to determine gear ratios,
+      rotational direction, and motion sequencing.
+    </figcaption>
+  </figure>
+</section>
+
+<!-- ================= CAD DESIGN IMAGES ================= -->
+<section class="project-gallery">
+  <h3>CAD Design and Internal Mechanism</h3>
+
+  <figure class="project-figure">
+    <img src="../images/dog_toy.jpg" alt="SolidWorks model of walking dog toy">
+    <figcaption>
+      Full SolidWorks assembly of the walking dog toy showing external body geometry
+      and overall proportions used during reverse engineering.
+    </figcaption>
+  </figure>
+
+  <figure class="project-figure">
+    <img src="../images/dog_toy_inside.jpg" alt="Internal SolidWorks mechanism of dog toy">
+    <figcaption>
+      Internal SolidWorks model highlighting the gear train and linkage system
+      responsible for coordinated leg motion.
+    </figcaption>
+  </figure>
+
+  <figure class="project-figure">
+    <img src="../images/dog_toy_inside_front.jpg" alt="Front internal view of dog toy mechanism">
+    <figcaption>
+      Front internal view of the walking mechanism, showing how rotational input
+      is transferred through the gearbox to the leg linkages.
+    </figcaption>
+  </figure>
 </section>
 
 <!-- ================= MECHANICAL ANALYSIS ================= -->
