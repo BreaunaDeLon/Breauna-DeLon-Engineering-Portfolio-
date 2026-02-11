@@ -243,17 +243,25 @@ HOW TO USE
     }
 
     /* Makes entire project card clickable without changing appearance */
+/* ===================== CLICKABLE PROJECT CARDS ===================== */
+
 .project-link {
   text-decoration: none;
   color: inherit;
   display: block;
 }
 
+.project-link .project {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
 .project-link:hover .project {
   border-color: var(--accent);
-  transform: translateY(-2px);
-  transition: 0.2s ease;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
 }
+
 
 
     /* =====================================================
@@ -359,53 +367,42 @@ HOW TO USE
 <section id="projects">
   <h3>Projects</h3>
   <!-- AI PILL SORTER -->
-
+<a href="projects/ai-pill-sorter.html" class="project-card-link">
   <div class="project">
-  <h4>
-    <a href="projects/pill-sorter.html">
-      AI-Powered Pill Sorting System
-    </a>
-  </h4>
-
-  <span>Capstone-Style Project</span>
-
-  <p>
-    Mechanical design, servo actuation, and Python-based computer vision.
-  </p>
-</div>
-
+    <h4>AI-Powered Pill Sorting System</h4>
+    <span>Capstone-Style Project</span>
+    <p>
+      Integrated mechanical design, servo actuation,
+      and computer vision for automated pill sorting.
+    </p>
+  </div>
+</a>
 
   
   <!-- FSAE Suspension -->
-
-
-    <div class="project">
-<h4>
-  <a href="projects/fsae-suspension.html">
-    Formula SAE Suspension Design
-  </a>
-</h4>
-      <span>Team Lead</span>
-      <p>Front and rear suspension redesign with packaging and manufacturability focus.</p>
-    </div>
-  
-  
-  <!-- Prosthetic Foot Project -->
-  </div>
+<a href="projects/fsae-suspension.html" class="project-card-link">
   <div class="project">
-  <h4>
-    <a href="projects/prosthetic-foot.html">
-      Prosthetic Foot Design & FEA Study
-    </a>
-  </h4>
-  <span>Design & Structural Analysis</span>
-  <p>
-    Designed and analyzed a low-cost prosthetic foot assembly using FEA to compare
-    material performance under walking load cases.
-  </p>
-</div>
+    <h4>Formula SAE Suspension Design</h4>
+    <span>Team Lead</span>
+    <p>
+      Front and rear suspension redesign with emphasis
+      on packaging, kinematics, and manufacturability.
+    </p>
+  </div>
+</a>
+  
 
-
+  <!-- Prosthetic Foot Project -->
+<a href="projects/prosthetic-foot.html" class="project-card-link">
+  <div class="project">
+    <h4>Prosthetic Foot Structural Analysis</h4>
+    <span>FEA & Materials Project</span>
+    <p>
+      Finite element analysis of a prosthetic foot under
+      walking, toe-off, and standing load cases.
+    </p>
+  </div>
+</a>
   
 
 <!-- Walking Dog Toy Project -->
