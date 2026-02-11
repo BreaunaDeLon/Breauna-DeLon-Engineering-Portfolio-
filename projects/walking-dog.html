@@ -2,14 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Reverse Engineered Walking Dog Toy | Breauna DeLon</title>
+  <title>Reverse Engineered Walking Dog Toy</title>
 
   <!-- Main site stylesheet -->
   <link rel="stylesheet" href="../style.css">
 
-  <!-- Page-specific styles -->
+  <!-- Page-specific styling -->
   <style>
-    /* ============== PROJECT IMAGE GALLERY ============== */
+
+    /* ===================== PAGE COLOR FIX ===================== */
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+    }
+
+    main {
+      background-color: var(--bg-light);
+    }
+
+    h1, h2, h3 {
+      color: var(--text-dark);
+    }
+
+    /* ===================== PROJECT IMAGE GALLERY ===================== */
     .project-gallery {
       max-width: 900px;
       margin: 3rem auto;
@@ -29,178 +44,128 @@
 
     .project-figure figcaption {
       margin-top: 0.75rem;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: #666;
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
     }
+
+    /* ===================== VIDEO EMBED ===================== */
+    .video-wrapper {
+      max-width: 700px;
+      margin: 3rem auto;
+      text-align: center;
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 12px;
+    }
+
+    .video-caption {
+      font-size: 0.95rem;
+      color: #666;
+      margin-top: 0.75rem;
+    }
+
   </style>
 </head>
 
-
 <body>
 
-<!-- ================= NAV BAR ================= -->
-<nav class="navbar">
-  <div class="nav-container">
-    <div class="nav-logo">Breauna DeLon</div>
+  <!-- NAV BAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">Breauna DeLon</div>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="mailto:breunaad12@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <ul class="nav-menu">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../index.html#projects">Projects</a></li>
-      <li><a href="../index.html#skills">Skills</a></li>
-      <li><a href="mailto:breaunad12@gmail.com">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+  <main>
+    <div class="container">
 
-<!-- ================= PROJECT HEADER ================= -->
-<header>
-  <div class="header-content">
-    <h1>Reverse Engineered Walking Dog Toy</h1>
-    <h2>Mechanical Systems & Kinematic Analysis Project</h2>
+      <!-- PROJECT HEADER -->
+      <h1>Reverse Engineered Walking Dog Toy</h1>
+      <h2>Mechanical Systems & Kinematic Analysis Project</h2>
 
-    <p>
-      Team-based reverse engineering project focused on analyzing and reproducing
-      a consumer toy’s internal walking mechanism through CAD modeling,
-      motion analysis, and mechanical decomposition.
-    </p>
-  </div>
-</header>
+      <p>
+        Team-based reverse engineering project focused on analyzing and reproducing
+        a consumer walking toy’s internal motion mechanism through CAD modeling,
+        motion analysis, and mechanical decomposition.
+      </p>
 
-<!-- ================= PROJECT OVERVIEW ================= -->
-<section>
-  <h3>Project Overview</h3>
+      <!-- PROJECT OVERVIEW -->
+      <h2>Project Overview</h2>
+      <p>
+        This project involved disassembling a commercially available walking dog toy
+        to understand how simple mechanical components such as gears, linkages, and
+        rotating cams combine to generate coordinated, repeatable walking motion.
+      </p>
 
-  <p>
-    This project involved reverse engineering a commercially available walking dog toy
-    to understand how simple mechanical components can be combined to produce
-    coordinated, repeatable motion.
-  </p>
+      <p>
+        The internal mechanism was measured, reconstructed, and modeled in SolidWorks
+        to capture gear relationships, linkage geometry, and motion paths responsible
+        for the toy’s walking behavior.
+      </p>
 
-  <p>
-    The internal mechanism was disassembled, measured, and reconstructed in CAD
-    to model linkages, gear trains, and motion paths responsible for the toy’s walking behavior.
-  </p>
-</section>
-  <!-- ================= PHYSICAL PROTOTYPE IMAGES ================= -->
-<section class="project-gallery">
-  <h3>Physical Toy and Gearbox</h3>
+      <!-- PHYSICAL TOY & GEARBOX -->
+      <section class="project-gallery">
+        <h2>Physical Toy and Gearbox</h2>
 
-  <figure class="project-figure">
-    <img src="../images/dog_toy_front_actual.jpg" alt="Front view of physical walking dog toy">
-    <figcaption>
-      Front view of the physical walking dog toy used as the basis for reverse
-      engineering and motion analysis.
-    </figcaption>
-  </figure>
+        <figure class="project-figure">
+          <img src="../images/dog_toy.jpg" alt="Physical walking dog toy">
+          <figcaption>
+            Fully assembled physical walking dog toy used as the reference system
+            for reverse engineering and motion analysis.
+          </figcaption>
+        </figure>
 
-  <figure class="project-figure">
-    <img src="../images/dog_toy_side_actual.jpg" alt="Side view of physical walking dog toy">
-    <figcaption>
-      Side view of the physical toy showing leg geometry and walking posture
-      during motion.
-    </figcaption>
-  </figure>
+        <figure class="project-figure">
+          <img src="../images/gear_box_dog_toy.jpg" alt="Internal gearbox of walking dog toy">
+          <figcaption>
+            Internal gearbox and drive mechanism showing gear train configuration
+            responsible for driving the walking motion.
+          </figcaption>
+        </figure>
+      </section>
 
-  <figure class="project-figure">
-    <img src="../images/gear_box_dog_toy.jpg" alt="Internal gearbox of dog toy">
-    <figcaption>
-      Internal gearbox extracted from the toy, analyzed to determine gear ratios,
-      rotational direction, and motion sequencing.
-    </figcaption>
-  </figure>
-</section>
+      <!-- CAD MODELS -->
+      <section class="project-gallery">
+        <h2>CAD Modeling and Internal Mechanism</h2>
 
-<!-- ================= CAD DESIGN IMAGES ================= -->
-<section class="project-gallery">
-  <h3>CAD Design and Internal Mechanism</h3>
+        <figure class="project-figure">
+          <img src="../images/dog_toy_inside.jpg" alt="CAD model of internal mechanism">
+          <figcaption>
+            SolidWorks reconstruction of the toy’s internal mechanism including
+            gear train, shafts, and linkage interfaces.
+          </figcaption>
+        </figure>
 
-  <figure class="project-figure">
-    <img src="../images/dog_toy.jpg" alt="SolidWorks model of walking dog toy">
-    <figcaption>
-      Full SolidWorks assembly of the walking dog toy showing external body geometry
-      and overall proportions used during reverse engineering.
-    </figcaption>
-  </figure>
+        <figure class="project-figure">
+          <img src="../images/dog_toy_inside_front.jpg" alt="Front view CAD model of walking mechanism">
+          <figcaption>
+            Front view of internal CAD assembly highlighting linkage symmetry
+            and motion coordination between legs.
+          </figcaption>
+        </figure>
 
-  <figure class="project-figure">
-    <img src="../images/dog_toy_inside.jpg" alt="Internal SolidWorks mechanism of dog toy">
-    <figcaption>
-      Internal SolidWorks model highlighting the gear train and linkage system
-      responsible for coordinated leg motion.
-    </figcaption>
-  </figure>
+        <figure class="project-figure">
+          <img src="../images/dog_toy_front_actual.jpg" alt="Front view of physical toy">
+          <figcaption>
+            Front view of the physical toy used to validate CAD geometry
+            and linkage alignment.
+          </figcaption>
+        </figure>
 
-  <figure class="project-figure">
-    <img src="../images/dog_toy_inside_front.jpg" alt="Front internal view of dog toy mechanism">
-    <figcaption>
-      Front internal view of the walking mechanism, showing how rotational input
-      is transferred through the gearbox to the leg linkages.
-    </figcaption>
-  </figure>
-</section>
-
-<!-- ================= MECHANICAL ANALYSIS ================= -->
-<section>
-  <h3>Mechanical & Kinematic Analysis</h3>
-
-  <p>
-    The walking motion was achieved through a motor-driven gear train connected to
-    a multi-link leg mechanism. Rotational input from the motor was converted into
-    oscillatory leg motion using offset linkages and pinned joints.
-  </p>
-
-  <p>
-    Special attention was given to:
-  </p>
-
-  <ul>
-    <li>Gear ratios and torque transmission</li>
-    <li>Linkage lengths and joint constraints</li>
-    <li>Synchronization between front and rear legs</li>
-    <li>Stability during ground contact phases</li>
-  </ul>
-</section>
-
-<!-- ================= TEAM & LEADERSHIP ================= -->
-<section>
-  <h3>Team Role & Leadership</h3>
-
-  <p>
-    Served as team lead, coordinating task assignments, timelines, and design reviews.
-    Responsibilities included delegating CAD modeling tasks, verifying dimensional accuracy,
-    and ensuring consistent assembly constraints across the full model.
-  </p>
-
-  <p>
-    This role emphasized leadership, communication, and accountability while balancing
-    technical problem-solving with team coordination.
-  </p>
-</section>
-
-<!-- ================= KEY SKILLS ================= -->
-<section>
-  <h3>Key Skills Demonstrated</h3>
-
-  <ul>
-    <li>Reverse engineering methodology</li>
-    <li>Mechanical linkage design</li>
-    <li>Gear train analysis</li>
-    <li>SolidWorks part and assembly modeling</li>
-    <li>Motion and interference analysis</li>
-    <li>Team leadership and coordination</li>
-  </ul>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer>
-  <p>
-    <a href="../index.html">← Back to Portfolio</a>
-  </p>
-</footer>
-
-</body>
-</html>
-
+        <figure class="project-figure">
+          <img src="../images/dog_toy_side_actual.jpg" alt="Side view of physical toy">
+          <figcaption>
+            Side profile of the physical toy showing leg articulation
+            and housing constraints considered
